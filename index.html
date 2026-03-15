@@ -39,10 +39,7 @@
                     document.getElementById("t").innerHTML = timeSec;
                     document.getElementById("count").playbackRate = 1;
                     document.getElementById("count").play()
-                    audio.addEventlistener("ended",() =>{
-                        document.writeln("audio finished playing");
-
-                    });
+                    
                     
                     if(timeSec>0){
                         timeSec--;
