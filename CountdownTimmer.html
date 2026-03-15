@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        *{
+            margin: 10px;
+            padding: 20px;
+        }
+        body{
+            background-color:silver;
+        }
+        h1{
+            color: blue;
+
+        }
+        button{
+            color: brown;
+            background-color: greenyellow;
+        }
+        
+    </style>
+</head>
+<body>
+    <center>
+        <input type="text" id="tm" placeholder="Enter time in sec" style="background-color: aqua;">
+        <button onclick="startTimer()">Start</button>
+        <br>
+        <h1 id="t">Timer will show here.</h1>
+        <audio src="voiceofruthie-countdown-echo-322691 (1).mp3" id="count"></audio>
+        <script>
+            function startTimer(){
+                let timeSec = parseInt(document.getElementById("tm").value);
+                let hasPlayed =false;
+                function updateTime(){
+                    document.getElementById("t").innerHTML = timeSec;
+                    document.getElementById("count").playbackRate = 1;
+                    document.getElementById("count").play()
+                    audio.addEventlistener("ended",() =>{
+                        document.writeln("audio finished playing");
+
+                    });
+                    
+                    if(timeSec>0){
+                        timeSec--;
+                                            
+                    }
+                }
+                setInterval(updateTime, 1000);
+        
+            }
+            
+            
+
+        </script>
+    </center>
+</body>
+</html>
